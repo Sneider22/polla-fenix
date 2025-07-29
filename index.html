@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polla de Animalitos El Fenix</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Agregar librería para leer Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Encabezado y Grilla de Números -->
+        <header class="page-header">
+            <div class="logo-info">
+                <div class="logo-placeholder">
+                    <h1>JUEGA Y GANA CON</h1>
+                </div>
+                <div class="payment-info">
+                    <div class="poll-value">
+                        <p>VALOR DE POLLA</p>
+                        <p>30 BS</p>
+                        <p>POR JUGADA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="numbers-section">
+                <div class="numbers-grid" id="numbers-grid">
+                    <!-- La grilla de números 0-36 y 00 se generará aquí -->
+                </div>
+                <div class="total-plays">
+                    Jugadas <span id="total-bets-header">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Título principal y Estadísticas -->
+        <section class="title-stats-section">
+            <div class="main-title">
+                <h2>POLLA DE ANIMALITOS EL FENIX</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <p>CANTIDAD DE GANADORES</p>
+                    <span id="winners-count">0</span>
+                </div>
+                <div class="stat-box">
+                    <p>PREMIOS A REPARTIR</p>
+                    <span id="prizes-to-distribute">0</span>
+                </div>
+                <div class="stat-box prize-box">
+                    <p>PREMIO</p>
+                    <span id="total-prize">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controles y Tabla de Jugadores -->
+        <section class="controls-players-section">
+             <!-- Sección de Importar Excel -->
+            <div class="import-section">
+                <h3>Controles de Datos</h3>
+                <div class="file-upload">
+                    <input type="file" id="excel-file" accept=".xlsx,.xls,.csv" style="display: none;">
+                    <button id="select-file" class="btn">Seleccionar Archivo</button>
+                    <span id="file-name" class="file-name"></span>
+                </div>
+                <div class="import-actions">
+                    <button id="import-data" class="btn" disabled>Importar Datos</button>
+                    <button id="clear-data" class="btn">Limpiar Datos</button>
+                    <button id="generate-winners" class="btn">Seleccionar Números Ganadores</button>
+                </div>
+            </div>
+
+            <div class="players-table-container">
+                <table class="players-table">
+                    <thead>
+                        <tr>
+                            <th>POS</th>
+                            <th>#</th>
+                            <th>NOMBRE</th>
+                            <th>N°1</th>
+                            <th>N°2</th>
+                            <th>N°3</th>
+                            <th>N°4</th>
+                            <th>N°5</th>
+                            <th>N°6</th>
+                        </tr>
+                    </thead>
+                    <tbody id="players-list">
+                        <!-- Las filas de jugadores se generarán aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
